@@ -4,40 +4,40 @@
 
 # Kua — Growth & Marketing Foundations
 
-**Kua** is a premium, high-end educational platform designed to empower founders, entrepreneurs, and marketers with essential growth frameworks[cite: 1]. From the **4 Ps** to the **AIDA funnel**, Kua provides a "zero-fluff" interactive learning experience[cite: 1].
+**Kua** is a premium, high-end educational platform designed to empower founders, entrepreneurs, and marketers with essential growth frameworks. From the **4 Ps** to the **AIDA funnel**, Kua provides a "zero-fluff" interactive learning experience.
 
 ---
 
-## 🚀 Features
+## Features
 
-*   **12 Core Modules**: Deep dives into Product, Price, Place, Promotion, SEO, and Content Strategy[cite: 1].
-*   **Interactive AIDA Funnel**: A visualizer demonstrating the customer journey: Awareness, Interest, Desire, Action[cite: 1].
-*   **Kua AI Companion**: An intelligent assistant capable of explaining complex marketing concepts and tracking user progress in real-time[cite: 1].
-*   **Gamified Dashboard**: Track your learning progress, quiz averages, and daily streaks[cite: 1].
-*   **Certification**: Automated certificate generation for Pro members upon 100% curriculum completion[cite: 1].
-
----
-
-## 🛠️ Tech Stack
-
-*   **Frontend**: HTML5, Tailwind CSS, and Iconify (Lucide set)[cite: 1].
-*   **Typography**: Inter (Google Fonts) for a modern, professional look[cite: 1].
-*   **Logic**: Vanilla JavaScript with a modular "DB" handler for `localStorage` persistence[cite: 1].
-*   **Animations**: Custom CSS keyframes for premium UI transitions like `fadeInUp` and `funnelFill`[cite: 1].
+*   **12 Core Modules**: Deep dives into Product, Price, Place, Promotion, SEO, and Content Strategy.
+*   **Interactive AIDA Funnel**: A visualizer demonstrating the customer journey: Awareness, Interest, Desire, Action.
+*   **Kua AI Companion**: An intelligent assistant capable of explaining complex marketing concepts and tracking user progress in real-time.
+*   **Gamified Dashboard**: Track your learning progress, quiz averages, and daily streaks.
+*   **Certification**: Automated certificate generation for Pro members upon 100% curriculum completion.
 
 ---
 
-## 🏛️ Architecture
+## Tech Stack
 
-The platform is built as a highly optimized **Single Page Application (SPA)**[cite: 1]:
-*   **Routing**: Managed via a `showPg` function for seamless transitions between the Dashboard, Curriculum, and Quizzes[cite: 1].
-*   **Data Structure**: Centralized constants (`MODS`, `QUIZZES`, `STATS`) for easy content scaling[cite: 1].
-*   **Auth System**: Custom-built signup and login logic with role-based access control[cite: 1].
-*   **Analytics**: Integrated tracking system (`Ana.t`) to log signups and module completions[cite: 1].
+*   **Frontend**: HTML5, Tailwind CSS, and Iconify (Lucide set).
+*   **Typography**: Inter (Google Fonts) for a modern, professional look.
+*   **Logic**: Vanilla JavaScript with a modular "DB" handler for `localStorage` persistence.
+*   **Animations**: Custom CSS keyframes for premium UI transitions like `fadeInUp` and `funnelFill`.
 
 ---
 
-## 👥 Co-Founders
+## Architecture
+
+The platform is built as a highly optimized **Single Page Application (SPA)**:
+*   **Routing**: Managed via a `showPg` function for seamless transitions between the Dashboard, Curriculum, and Quizzes.
+*   **Data Structure**: Centralized constants (`MODS`, `QUIZZES`, `STATS`) for easy content scaling.
+*   **Auth System**: Custom-built signup and login logic with role-based access control.
+*   **Analytics**: Integrated tracking system (`Ana.t`) to log signups and module completions.
+
+---
+
+## Co-Founders
 
 Kua is built and maintained by a dedicated team of innovators:
 
@@ -50,22 +50,22 @@ Kua is built and maintained by a dedicated team of innovators:
 
 ---
 
-## 📈 Getting Started
+##  Getting Started
 
 1.  **Clone the repository**:
     ```bash
-    git clone [https://github.com/your-repo/kua-marketing.git](https://github.com/your-repo/kua-marketing.git)
+    git clone https://github.com/EGABO-TECH/KUA.git
     ```
-2.  **Open `index.html`**: Launch the file in any modern web browser[cite: 1].
-3.  **Start Learning**: Navigate to the "Curriculum" tab to begin Module 1[cite: 1].
+2.  **Open `index.html`**: Launch the file in any modern web browser.
+3.  **Start Learning**: Navigate to the "Curriculum" tab to begin Module 1.
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
-*   **Teams Dashboard**: Collaborative tools for marketing agencies[cite: 1].
-*   **1-on-1 Coaching**: Direct integration with industry mentors[cite: 1].
-*   **Weekly Insights**: A dynamic marketing blog for trending growth hacks[cite: 1].
+*   **Teams Dashboard**: Collaborative tools for marketing agencies.
+*   **1-on-1 Coaching**: Direct integration with industry mentors.
+*   **Weekly Insights**: A dynamic marketing blog for trending growth hacks.
 
 ---
 *© 2026 Kua Platform. Empowering the next generation of African entrepreneurs.*
