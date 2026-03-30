@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://lh3.googleusercontent.com/d/1y88yOAnl9G4MCH_I978p08G4z6xKIs56" alt="Kua Logo" width="600"/>
-</p>
+  <img src="kua-logo.png" alt="Kua Logo" width="600"/>
+</p>>
 
 # Kua — Growth & Marketing Foundations
 
