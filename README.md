@@ -11,13 +11,13 @@
 
 ---
 
-## 🚀 Overview
+##  Overview
 
 **KUA** is a high-end, client-side Single Page Application (SPA) designed to serve as a comprehensive dashboard for creating, managing, and democratizing social marketing campaigns. 
 
 Built with an ultra-premium "Clairon AI" dark-mode aesthetic featuring deep charcoal tones, electric orange accents, and volumetric CSS-based lighting, KUA provides lightning-fast marketing workflows directly from the browser window.
 
-### 🔥 Core Features & Capabilities
+###  Core Features & Capabilities
 
 - **Flyer Generator Engine**: Synthesize pixel-perfect campaign flyers via an HTML5 `<canvas>` rendering pipeline. Features drag-and-drop image uploading, dynamic typography layouts, and multiple automated theme layers (Classic, Midnight, Neon) for stunning promotional assets.
 - **Multi-Channel Broadcast Center**: Actively manage a deployment grid to instantly distribute generated marketing content directly to connected node endpoints (WhatsApp, Instagram, X/Twitter, LinkedIn). Features an automated clipboard injection protocol for "paste-to-send" bypassing image upload ceilings.
@@ -29,7 +29,7 @@ Built with an ultra-premium "Clairon AI" dark-mode aesthetic featuring deep char
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+##  Tech Stack & Architecture
 
 - **Markup & Layout**: Semantic HTML5, `index.html` orchestrating Tailwind CSS utility classes.
 - **Business Logic Layer**: Vanilla JavaScript ES6 (`app.js`) handling dynamic routing (`nv()`), global state tracking (`P.page`), Data Persistence (`localStorage`), and HTML5 graphic synthesis.
@@ -37,9 +37,9 @@ Built with an ultra-premium "Clairon AI" dark-mode aesthetic featuring deep char
 
 ---
 
-## 🤝 The Team
+##  The Team
 
-Designed, developed, and maintained by the brilliant core collaborators at **EGABO-TECH**:
+Designed, developed, and maintained by the brilliant core collaborators at **UNITED**:
 
 - **Alimpa Anne Hillary**
 - **Egabo Aaron**
