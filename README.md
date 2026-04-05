@@ -1,4 +1,8 @@
 <div align="center">
+  <img src="Assets/kua-logo.png" alt="KUA Social Marketing Platform Logo" width="800" />
+  
+  <br/><br/>
+  
   <img src="https://img.shields.io/badge/Status-Active-success.svg?style=for-the-badge" alt="Status" />
   <img src="https://img.shields.io/badge/Architecture-Modular%20SPA-blue?style=for-the-badge" alt="Architecture" />
   <img src="https://img.shields.io/badge/UI-Clairon%20AI%20Glassmorphism-FF8C00?style=for-the-badge" alt="UI" />
