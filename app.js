@@ -1,3 +1,19 @@
+        /* ── Splash screen ────────────────────────────────── */
+        function enterApp() {
+            const splash = document.getElementById('splash');
+            const btn    = document.getElementById('splash-btn');
+            if (!splash) return;
+            // Animate button click
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                splash.classList.add('exit');
+                // Remove from DOM after transition (0.7 s)
+                setTimeout(() => splash.remove(), 750);
+                // Kick off the main app
+                init();
+            }, 180);
+        }
+
         const $ = id => document.getElementById(id);
         const P = { page: 'dash', ldm: false, sbC: false, fS: 1, img: null, imgU: null, title: '', price: '', desc: '', tags: [], theme: 'classic', fr: false, bcCh: { whatsapp: true, facebook: true, instagram: true, x: true } };
 
@@ -146,4 +162,4 @@
         function init() { iTags(); rDash(); nv('dash'); $('main').style.marginLeft = window.innerWidth >= 768 ? (P.sbC ? '64px' : '256px') : '0' }
         window.addEventListener('resize', () => { $('main').style.marginLeft = window.innerWidth >= 768 ? (P.sbC ? '64px' : '256px') : '0' });
         document.addEventListener('keydown', e => { if (e.target.classList.contains('tog') && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); e.target.click() } });
-        init();
+        /* init() is now called by enterApp() — do NOT call it here */

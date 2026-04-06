@@ -15,6 +15,47 @@
 </head>
 
 <body class="bg-nv-900 text-nv-50">
+
+    <!-- ═══════════════════════════════════════════════
+         SPLASH / LANDING PAGE
+    ════════════════════════════════════════════════ -->
+    <div id="splash" class="splash-screen">
+        <!-- Animated background particles -->
+        <div class="splash-particles" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+
+        <!-- Radial glow orbs -->
+        <div class="splash-orb splash-orb-1" aria-hidden="true"></div>
+        <div class="splash-orb splash-orb-2" aria-hidden="true"></div>
+
+        <!-- Content -->
+        <div class="splash-content">
+            <!-- Hero image -->
+            <div class="splash-logo-wrap">
+                <img src="Assets/kua-logo.png" alt="KUA Social Marketing Platform Logo" class="splash-hero-img" />
+            </div>
+
+            <!-- Tagline -->
+            <p class="splash-tagline">Your hyper-advanced social marketing command center</p>
+
+            <!-- WELCOME button -->
+            <button id="splash-btn" onclick="enterApp()" class="splash-btn" aria-label="Enter KUA Platform">
+                <span class="splash-btn-glow" aria-hidden="true"></span>
+                <i class="fa-solid fa-bolt splash-btn-icon" aria-hidden="true"></i>
+                <span class="splash-btn-text">Welcome</span>
+                <i class="fa-solid fa-arrow-right splash-btn-arrow" aria-hidden="true"></i>
+            </button>
+
+            <!-- Subtle bottom hint -->
+            <p class="splash-hint">
+                <i class="fa-solid fa-shield-halved mr-1 opacity-60"></i>
+                Powered by <strong>EGABO TECH</strong>
+            </p>
+        </div>
+    </div>
+
     <div id="app" class="flex h-screen">
         <aside id="sidebar" class="bg-nv-900 border-r border-nv-800 flex flex-col z-40 shrink-0 h-full">
             <div class="flex items-center gap-3 px-5 h-[72px] border-b border-nv-800/60 relative">
