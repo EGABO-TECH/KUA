@@ -208,6 +208,23 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .text-gradient-luxe {
+            background: linear-gradient(135deg, #D4AF37, #F2F2F2, #D4AF37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-el {
+            color: #FF8C00;
+        }
+        .text-el-d {
+            color: #E67E22;
+        }
+        .bg-el-d {
+            background: #E67E22;
+        }
+
         .tc {
             transition: all .15s;
             cursor: pointer;
