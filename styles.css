@@ -468,10 +468,10 @@
         /* Full-page background logo - shifted upward so KUA text clears the button */
         .splash-bg-img {
             position: absolute;
-            top: -8%;            /* push image content up */
+            top: -18%;           /* aggressive upward shift */
             left: 0;
             width: 100%;
-            height: 116%;        /* extend to avoid bottom gap */
+            height: 136%;        /* extend to fill bottom gap */
             object-fit: cover;
             object-position: center center;
             z-index: 0;
@@ -553,12 +553,12 @@
             100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
         }
 
-        /* Content wrapper – sits just below the KUA logo branding */
+        /* Content wrapper – anchored to bottom, always below the KUA branding */
         .splash-content {
             position: absolute;
             z-index: 10;
             left: 50%;
-            top: 85%;
+            bottom: 24px;
             transform: translateX(-50%);
             display: flex;
             flex-direction: column;
