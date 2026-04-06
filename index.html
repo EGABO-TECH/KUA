@@ -91,9 +91,9 @@
                 <!-- DASHBOARD -->
                 <div id="v-dash" class="vw on p-4 pb-20 md:p-6 relative z-10">
                     <div class="max-w-5xl mx-auto">
-                        <div class="mb-6 fu relative w-full rounded-[28px] overflow-hidden flex items-center p-8 md:p-10 bg-nv-800/30 border border-nv-700/40 sc">
+                        <div class="mb-6 fu relative w-full rounded-[24px] md:rounded-[28px] overflow-hidden flex items-center p-6 sm:p-8 md:p-10 bg-nv-800/30 border border-nv-700/40 sc">
                             <!-- SVG Abstract Art Visuals -->
-                            <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-90">
+                            <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-40 sm:opacity-90">
                                 <svg class="absolute w-[600px] h-[600px] -right-[150px] -top-[120px] mix-blend-screen" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
                                         <linearGradient id="orbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -129,7 +129,7 @@
                                 </div>
                             </div>
 
-                            <div class="relative z-10 max-w-[60%]">
+                            <div class="relative z-10 max-w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%]">
                                 <div class="inline-block px-3 py-1 bg-el/15 border border-el/30 rounded-full text-el text-[10px] font-bold tracking-widest uppercase mb-4 shadow-[0_0_15px_rgba(255,140,0,0.2)]"><i class="fa-solid fa-bolt mr-1.5 text-white/90"></i>Kua Engine v2.0</div>
                                 <h2 class="text-3xl md:text-5xl font-extrabold text-gradient mb-3 tracking-tight leading-[1.1]" id="dash-w">Welcome to Kua</h2>
                                 <p class="text-[13px] md:text-[15px] text-nv-300 leading-relaxed font-medium mb-6">Your hyper-advanced social marketing command center. Synthesize high-converting flyers instantly.</p>
@@ -210,22 +210,22 @@
                         <div class="flex items-center mb-6 px-1">
                             <div class="flex flex-col items-center gap-1">
                                 <div id="s1" class="sd ac">1</div><span
-                                    class="text-[9px] font-semibold text-nv-500 uppercase tracking-wider">Upload</span>
+                                    class="text-[9px] sm:text-[10px] font-semibold text-nv-500 uppercase tracking-wider">Upload</span>
                             </div>
-                            <div id="l1" class="sln pn mx-2 mt-[-14px]"></div>
+                            <div id="l1" class="sln pn mx-1 sm:mx-2 mt-[-14px]"></div>
                             <div class="flex flex-col items-center gap-1">
                                 <div id="s2" class="sd pn">2</div><span
-                                    class="text-[9px] font-semibold text-nv-500 uppercase tracking-wider">Details</span>
+                                    class="text-[9px] sm:text-[10px] font-semibold text-nv-500 uppercase tracking-wider">Details</span>
                             </div>
-                            <div id="l2" class="sln pn mx-2 mt-[-14px]"></div>
+                            <div id="l2" class="sln pn mx-1 sm:mx-2 mt-[-14px]"></div>
                             <div class="flex flex-col items-center gap-1">
                                 <div id="s3" class="sd pn">3</div><span
-                                    class="text-[9px] font-semibold text-nv-500 uppercase tracking-wider">Preview</span>
+                                    class="text-[9px] sm:text-[10px] font-semibold text-nv-500 uppercase tracking-wider">Preview</span>
                             </div>
-                            <div id="l3" class="sln pn mx-2 mt-[-14px]"></div>
+                            <div id="l3" class="sln pn mx-1 sm:mx-2 mt-[-14px]"></div>
                             <div class="flex flex-col items-center gap-1">
                                 <div id="s4" class="sd pn">4</div><span
-                                    class="text-[9px] font-semibold text-nv-500 uppercase tracking-wider">Send</span>
+                                    class="text-[9px] sm:text-[10px] font-semibold text-nv-500 uppercase tracking-wider">Send</span>
                             </div>
                         </div>
                         <!-- Step 1 -->
@@ -235,7 +235,7 @@
                                 <p class="text-sm text-nv-400">Choose a clear, well-lit image for best results.</p>
                             </div>
                             <div id="uz"
-                                class="uz rounded-2xl p-8 md:p-10 flex flex-col items-center justify-center cursor-pointer min-h-[220px] bg-nv-800/20"
+                                class="uz rounded-2xl p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center cursor-pointer min-h-[220px] bg-nv-800/20"
                                 onclick="$('fi').click()" ondragover="event.preventDefault();this.classList.add('dv')"
                                 ondragleave="this.classList.remove('dv')" ondrop="hDrop(event)">
                                 <div id="up-h">
@@ -301,7 +301,7 @@
                                 <div><label
                                         class="block text-xs font-semibold text-nv-400 uppercase tracking-wider mb-2">Flyer
                                         Style</label>
-                                    <div class="grid grid-cols-3 gap-2.5">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                                         <div class="tc sl rounded-xl p-2.5 text-center" data-t="classic"
                                             onclick="pTh(this)">
                                             <div
@@ -420,8 +420,8 @@
                 <!-- BROADCAST -->
                 <div id="v-bcast" class="vw p-4 pb-20 md:p-6 relative z-10">
                     <div class="max-w-3xl mx-auto">
-                        <div class="mb-6 fu relative w-full rounded-[24px] overflow-hidden flex items-center p-6 md:p-8 bg-nv-800/30 border border-nv-700/40 sc">
-                            <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-50">
+                        <div class="mb-6 fu relative w-full rounded-[24px] md:rounded-[28px] overflow-hidden flex items-center p-6 md:p-8 bg-nv-800/30 border border-nv-700/40 sc">
+                            <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-30 sm:opacity-50">
                                 <svg class="absolute w-[400px] h-[400px] -right-[100px] -top-[120px] mix-blend-screen" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M 100,20 Q 150,20 180,80 T 100,180 T 20,80 T 100,20" fill="none" stroke="#FF8C00" stroke-width="0.5" opacity="0.3"/>
                                     <path class="animate-[sp_20s_linear_infinite]" style="transform-origin: 100px 100px" d="M 100,40 Q 140,40 160,80 T 100,160 T 40,80 T 100,40" fill="none" stroke="#FFB300" stroke-width="1.5" stroke-dasharray="4 8" filter="blur(1px)"/>
@@ -433,7 +433,7 @@
                                     <i class="fa-brands fa-instagram text-[#E4405F]"></i>
                                 </div>
                             </div>
-                            <div class="relative z-10 max-w-[80%]">
+                            <div class="relative z-10 max-w-full sm:max-w-[80%]">
                                 <h2 class="text-2xl font-extrabold text-white mb-2 tracking-tight"><span class="text-gradient">Broadcast</span> Center</h2>
                                 <p class="text-sm text-nv-300 font-medium leading-relaxed">Manage your multi-channel deployment payload. Fire off your flyers to your connected nodes instantly.</p>
                             </div>
@@ -457,8 +457,8 @@
                 <!-- ACCOUNTS -->
                 <div id="v-acct" class="vw p-4 pb-20 md:p-6 relative z-10">
                     <div class="max-w-2xl mx-auto">
-                        <div class="mb-6 fu relative w-full rounded-[24px] overflow-hidden flex items-center p-6 md:p-8 bg-nv-800/30 border border-nv-700/40 sc">
-                            <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-40">
+                        <div class="mb-6 fu relative w-full rounded-[24px] md:rounded-[28px] overflow-hidden flex items-center p-6 md:p-8 bg-nv-800/30 border border-nv-700/40 sc">
+                            <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-20 sm:opacity-40">
                                 <svg class="absolute w-[500px] h-[500px] -right-[150px] -top-[150px] mix-blend-screen" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                     <g class="animate-[sp_40s_linear_infinite]" style="transform-origin: 100px 100px;">
                                         <circle cx="100" cy="100" r="80" fill="none" stroke="#FFF" stroke-width="0.3" stroke-dasharray="2 4" opacity="0.3"/>
@@ -471,7 +471,7 @@
                                     <i class="fa-solid fa-link text-xl text-el"></i>
                                 </div>
                             </div>
-                            <div class="relative z-10 max-w-[80%]">
+                            <div class="relative z-10 max-w-full sm:max-w-[80%]">
                                 <h2 class="text-2xl font-extrabold text-white mb-2 tracking-tight"><span class="text-gradient">Integrations</span> Hub</h2>
                                 <p class="text-sm text-nv-300 font-medium leading-relaxed">Securely authorize your API endpoints to enable seamless, frictionless publishing mechanics.</p>
                             </div>
