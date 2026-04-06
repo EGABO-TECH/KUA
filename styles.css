@@ -465,25 +465,33 @@
             transition: opacity 0.7s ease, visibility 0.7s ease;
         }
 
-        /* Full-page background logo */
+        /* Full-page background logo - shifted upward so KUA text clears the button */
         .splash-bg-img {
             position: absolute;
-            inset: 0;
+            top: -8%;            /* push image content up */
+            left: 0;
             width: 100%;
-            height: 100%;
+            height: 116%;        /* extend to avoid bottom gap */
             object-fit: cover;
-            object-position: center top;
+            object-position: center center;
             z-index: 0;
         }
 
-        /* Cinematic vignette overlay */
+        /* Cinematic vignette — lighter in the KUA text zone (65-82%), dark at bottom */
         .splash-overlay {
             position: absolute;
             inset: 0;
             z-index: 1;
             background:
-                radial-gradient(ellipse at center, transparent 35%, rgba(2,10,18,0.55) 100%),
-                linear-gradient(to bottom, rgba(2,10,18,0.1) 0%, rgba(2,10,18,0.2) 55%, rgba(2,10,18,0.75) 80%, rgba(2,10,18,0.95) 100%);
+                radial-gradient(ellipse at center, transparent 30%, rgba(2,10,18,0.45) 100%),
+                linear-gradient(
+                    to bottom,
+                    rgba(2,10,18,0.08) 0%,
+                    rgba(2,10,18,0.08) 55%,
+                    rgba(2,10,18,0.60) 75%,
+                    rgba(2,10,18,0.88) 88%,
+                    rgba(2,10,18,0.97) 100%
+                );
         }
 
         .splash-screen.exit {
@@ -545,12 +553,12 @@
             100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
         }
 
-        /* Content wrapper – absolutely centred, below the KUA logo text */
+        /* Content wrapper – sits just below the KUA logo branding */
         .splash-content {
             position: absolute;
             z-index: 10;
             left: 50%;
-            top: 78%;
+            top: 85%;
             transform: translateX(-50%);
             display: flex;
             flex-direction: column;
