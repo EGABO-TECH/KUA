@@ -73,11 +73,12 @@
         /* Add listeners for hooks */
         window.addEventListener('DOMContentLoaded', () => { $('i-t').addEventListener('input', rHooks); $('i-p').addEventListener('input', rHooks) });
 
-        /* Flyer Engine */
+        /* Flyer Engine Utilities */
+        function nPattern(c, w, h, a) { const nc = document.createElement('canvas'); nc.width = 128; nc.height = 128; const nctx = nc.getContext('2d'); const id = nctx.createImageData(128, 128); for (let i = 0; i < id.data.length; i += 4) { const v = Math.random() * 255; id.data[i] = v; id.data[i + 1] = v; id.data[i + 2] = v; id.data[i + 3] = 35 } nctx.putImageData(id, 0, 0); const p = c.createPattern(nc, 'repeat'); c.save(); c.globalAlpha = a; c.fillStyle = p; c.fillRect(0, 0, w, h); c.restore() }
         const TH = {
-            luxe: { bg: '#0D0D0D', hBg: 'transparent', hAc: '#D4AF37', tC: '#F2F2F2', dC: '#8C8C8C', pBg: '#D4AF37', pBd: '#D4AF37', pC: '#0D0D0D', cBg: 'transparent', cC: '#D4AF37', tgC: '#595959', wC: '#404040', la: 'left', hBar: false, sh: true, gl: true, fH: '700 48px Inter', fT: '400 18px Inter', fP: '700 36px Inter', lS: '0.05em', iF: 'brightness(1.1) contrast(1.05)' },
-            modernist: { bg: '#FFFFFF', hBg: '#000000', hAc: '#E63946', tC: '#000000', dC: '#457B9D', pBg: '#000000', pBd: '#000000', pC: '#FFFFFF', cBg: '#E63946', cC: '#FFFFFF', tgC: '#A8DADC', wC: '#F1FAEE', la: 'center', hBar: true, sh: false, gl: false, fH: '900 62px Inter', fT: '500 16px Inter', fP: '900 44px Inter', lS: '-0.02em', iF: 'grayscale(0.1) contrast(1.1)' },
-            streetwise: { bg: '#050505', hBg: 'gradient', hAc: '#3A86FF', tC: '#FFFFFF', dC: '#8338EC', pBg: 'gradient', pBd: 'transparent', pC: '#FFFFFF', cBg: '#3A86FF', cC: '#FFFFFF', tgC: '#FF006E', wC: '#333333', la: 'left', hBar: true, sh: true, gl: true, fH: '800 54px Inter', fT: '600 20px Inter', fP: '800 40px Inter', lS: '0.02em', iF: 'saturate(1.2) contrast(1.1)' }
+            luxe: { bg: '#0D0D0D', hBg: 'transparent', hAc: '#D4AF37', tC: '#F2F2F2', dC: '#8C8C8C', pBg: '#D4AF37', pBd: '#D4AF37', pC: '#0D0D0D', cBg: 'transparent', cC: '#D4AF37', tgC: '#595959', wC: '#404040', la: 'left', hBar: false, sh: true, gl: true, fH: '700 68px serif', fT: '400 20px Inter', fP: '700 42px Inter', lS: '0.12em', iF: 'brightness(1.1) contrast(1.1)', ed: true, g: 0.08 },
+            modernist: { bg: '#FFFFFF', hBg: '#000000', hAc: '#E63946', tC: '#000000', dC: '#1D3557', pBg: '#000000', pBd: '#000000', pC: '#FFFFFF', cBg: '#E63946', cC: '#FFFFFF', tgC: '#457B9D', wC: '#F1FAEE', la: 'center', hBar: true, sh: false, gl: false, fH: '900 78px Inter', fT: '500 18px Inter', fP: '900 52px Inter', lS: '-0.04em', iF: 'grayscale(0.1) contrast(1.15)', ed: false, g: 0.05 },
+            streetwise: { bg: '#050505', hBg: 'gradient', hAc: '#3A86FF', tC: '#FFFFFF', dC: '#8338EC', pBg: 'gradient', pBd: 'transparent', pC: '#FFFFFF', cBg: '#3A86FF', cC: '#FFFFFF', tgC: '#FF006E', wC: '#333333', la: 'left', hBar: true, sh: true, gl: true, fH: '800 62px Inter', fT: '600 22px Inter', fP: '800 46px Inter', lS: '0.04em', iF: 'saturate(1.2) contrast(1.15)', ed: false, g: 0.1 }
         };
         function rR(c, x, y, w, h, r) { r = Math.max(0, Math.min(r, Math.min(w, h) / 2)); c.beginPath(); c.moveTo(x + r, y); c.lineTo(x + w - r, y); c.quadraticCurveTo(x + w, y, x + w, y + r); c.lineTo(x + w, y + h - r); c.quadraticCurveTo(x + w, y + h, x + w - r, y + h); c.lineTo(x + r, y + h); c.quadraticCurveTo(x, y + h, x, y + h - r); c.lineTo(x, y + r); c.quadraticCurveTo(x, y, x + r, y); c.closePath() }
         function iC(c, img, dx, dy, dw, dh) { const ir = img.width / img.height, ar = dw / dh; let sx, sy, sw, sh; if (ir > ar) { sh = img.height; sw = Math.max(1, sh * ar); sx = (img.width - sw) / 2; sy = 0 } else { sw = img.width; sh = Math.max(1, sw / ar); sx = 0; sy = (img.height - sh) / 2 } c.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh) }
@@ -89,11 +90,18 @@
             const pr = getProfile(), br = (pr.brandName || pr.businessName || 'KUA').toUpperCase(), ct = pr.ctaText || 'ORDER ON WHATSAPP';
             const cx = W / 2, lx = 80, ta = t.la === 'left' ? 'left' : 'center', mX = ta === 'left' ? lx : cx;
 
-            // Background & Effects
+            // Background & Studio Aurora
             c.fillStyle = t.bg; c.fillRect(0, 0, W, H);
+            if (d.image) {
+                c.save();
+                c.filter = 'blur(60px) desaturate(0.5) brightness(0.6)';
+                c.globalAlpha = 0.4;
+                iC(c, d.image, -100, -100, W + 200, H + 200);
+                c.restore();
+            }
             if (t.gl) {
                 const g = c.createRadialGradient(W * .8, H * .2, 0, W * .8, H * .2, W);
-                g.addColorStop(0, tk === 'luxe' ? 'rgba(212,175,55,0.08)' : 'rgba(58,134,255,0.12)');
+                g.addColorStop(0, tk === 'luxe' ? 'rgba(212,175,55,0.12)' : 'rgba(58,134,255,0.15)');
                 g.addColorStop(1, 'transparent');
                 c.fillStyle = g; c.fillRect(0, 0, W, H);
             }
@@ -115,11 +123,13 @@
             }
 
             // Image Section
-            const iH = 500, iY = t.hBar ? 150 : 120, iW = 920, iX = (W - iW) / 2;
+            let iH = 540, iY = t.hBar ? 150 : 120, iW = 920, iX = (W - iW) / 2;
+            if (t.ed) { iW = 1000; iX = 40; iH = 600 } // Editorial layout scaling
+            
             c.save();
-            rR(c, iX, iY, iW, iH, 24);
+            rR(c, iX, iY, iW, iH, t.ed ? 8 : 24);
             if (t.sh) {
-                c.shadowColor = 'rgba(0,0,0,0.5)'; c.shadowBlur = 40; c.shadowOffsetY = 20;
+                c.shadowColor = 'rgba(0,0,0,0.6)'; c.shadowBlur = 60; c.shadowOffsetY = 30;
                 c.fillStyle = '#111'; c.fill();
                 c.shadowBlur = 0;
             }
@@ -130,7 +140,7 @@
                 c.filter = 'none';
                 // Rim Light Effect
                 const rg = c.createLinearGradient(iX, iY, iX, iY + iH);
-                rg.addColorStop(0, 'rgba(255,255,255,0.15)'); rg.addColorStop(0.5, 'transparent'); rg.addColorStop(1, 'rgba(0,0,0,0.2)');
+                rg.addColorStop(0, 'rgba(255,255,255,0.2)'); rg.addColorStop(0.5, 'transparent'); rg.addColorStop(1, 'rgba(0,0,0,0.3)');
                 c.fillStyle = rg; c.fillRect(iX, iY, iW, iH);
             } else {
                 c.fillStyle = '#1A1A1A'; c.fillRect(iX, iY, iW, iH);
@@ -138,24 +148,35 @@
             c.restore();
 
             // Content Section
-            let cy = iY + iH + 50;
-            const mw = 900;
-            c.fillStyle = t.tC; c.font = t.fH; c.textAlign = ta; c.textBaseline = 'top';
-            c.letterSpacing = t.lS || '0';
-            const wrappedTitle = wrT(c, d.title.toUpperCase(), mw, 60, 2);
-            wrappedTitle.forEach(l => { c.fillText(l, mX, cy); cy += 65 });
+            let cy = iY + iH + 60;
+            const mw = 920;
+            
+            if (t.ed) {
+                // Editorial Title Overlap
+                const oy = iY + iH - 40;
+                c.fillStyle = 'rgba(0,0,0,0.6)';
+                c.fillRect(0, oy - 20, W, 140);
+                c.fillStyle = t.tC; c.font = '700 82px serif'; c.textAlign = 'center';
+                c.fillText(d.title.toUpperCase(), W/2, oy);
+                cy = oy + 120;
+            } else {
+                c.fillStyle = t.tC; c.font = t.fH; c.textAlign = ta; c.textBaseline = 'top';
+                c.letterSpacing = t.lS || '0';
+                const wrappedTitle = wrT(c, d.title.toUpperCase(), mw, 60, 2);
+                wrappedTitle.forEach(l => { c.fillText(l, mX, cy); cy += 75 });
+            }
 
             if (d.desc) {
-                cy += 15; c.fillStyle = t.dC; c.font = t.fT;
+                cy += 10; c.fillStyle = t.dC; c.font = t.fT;
                 const wrappedDesc = wrT(c, d.desc, mw, 24, 2);
-                wrappedDesc.forEach(l => { c.fillText(l, mX, cy); cy += 28 });
+                wrappedDesc.forEach(l => { c.fillText(l, mX, cy); cy += 30 });
             }
 
             // Price Badge
-            cy += 30;
+            cy += 40;
             const pS = `$${parseFloat(d.price).toLocaleString()}`;
             c.font = t.fP; const pw = c.measureText(pS).width;
-            const bW = pw + 60, bH = 80, bX = ta === 'left' ? lx : cx - bW / 2;
+            const bW = pw + 80, bH = 90, bX = ta === 'left' ? lx : cx - bW / 2;
             c.save();
             if (t.pBg === 'gradient') {
                 const g = c.createLinearGradient(bX, cy, bX + bW, cy); g.addColorStop(0, '#FF006E'); g.addColorStop(1, '#FB5607');
@@ -167,27 +188,30 @@
             c.restore();
 
             // CTA Button
-            cy += bH + 40;
-            const cW = 400, cH = 70, cX = ta === 'left' ? lx : cx - cW / 2;
+            cy += bH + 50;
+            const cW = 440, cH = 80, cX = ta === 'left' ? lx : cx - cW / 2;
             c.save();
             if (tk === 'luxe') {
-                rR(c, cX, cy, cW, cH, 0); c.strokeStyle = '#D4AF37'; c.lineWidth = 2; c.stroke();
+                rR(c, cX, cy, cW, cH, 0); c.strokeStyle = '#D4AF37'; c.lineWidth = 3; c.stroke();
             } else {
                 c.fillStyle = t.cBg === 'gradient' ? '#3A86FF' : t.cBg;
-                rR(c, cX, cy, cW, cH, 8); c.fill();
+                rR(c, cX, cy, cW, cH, 12); c.fill();
             }
-            c.fillStyle = t.cC; c.font = 'bold 20px Inter'; c.textAlign = 'center'; c.textBaseline = 'middle';
-            c.letterSpacing = '0.1em';
+            c.fillStyle = t.cC; c.font = 'bold 22px Inter'; c.textAlign = 'center'; c.textBaseline = 'middle';
+            c.letterSpacing = '0.15em';
             c.fillText(ct, cX + cW / 2, cy + cH / 2 + 1);
             c.restore();
 
             // Footer
             if (!P.pro) {
-                c.letterSpacing = '0.2em';
-                c.fillStyle = t.wC; c.font = '600 14px Inter'; c.textAlign = 'center';
-                c.fillText('POWERED BY UNITED', cx, H - 40);
+                c.letterSpacing = '0.3em';
+                c.fillStyle = t.wC; c.font = '800 16px Inter'; c.textAlign = 'center';
+                c.fillText('POWERED BY UNITED', cx, H - 50);
             }
             c.letterSpacing = '0';
+
+            // Noise Overlay
+            if (t.g) nPattern(c, W, H, t.g);
         }
 
         function genF() {
@@ -208,7 +232,7 @@
         /* Broadcast Execution */
         async function doBC() {
             const pr = getProfile(), sel = Object.entries(P.bcCh).filter(([_, v]) => v).map(([k]) => k); if (!sel.length) { $('bc-er').classList.remove('hidden'); return } $('bc-er').classList.add('hidden'); const btn = $('bc-bn'); btn.disabled = true; btn.innerHTML = '<span class="spn mr-1.5"></span>Deploying...'; const res = $('bc-rs'), list = $('bc-ls'); res.classList.remove('hidden'); list.innerHTML = '';
-            const msg = `✨ ${P.title.toUpperCase()}\n\n"${P.desc}"\n\nPrice: $${parseFloat(P.price).toLocaleString()}\n\nOrder here: ${pr.channels?.whatsapp?.phone ? 'https://wa.me/' + pr.channels.whatsapp.phone.replace(/\D/g,'') : 'DM for link'}`;
+            const msg = `🔥 *${P.title.toUpperCase()}*\n\n"${P.desc}"\n\n💎 *Price: $${parseFloat(P.price).toLocaleString()}*\n\n✅ *Order here:* ${pr.channels?.whatsapp?.phone ? 'https://wa.me/' + pr.channels.whatsapp.phone.replace(/\D/g,'') : 'DM for link'}`;
             const nM = { whatsapp: 'WhatsApp', facebook: 'Facebook', instagram: 'Instagram', x: 'X (Twitter)' }, iM = { whatsapp: 'fa-brands fa-whatsapp', facebook: 'fa-brands fa-facebook-f', instagram: 'fa-brands fa-instagram', x: 'fa-brands fa-x-twitter' }, cM2 = { whatsapp: '#25D366', facebook: '#1877F2', instagram: '#E4405F', x: '#E7E9EA' };
             const items = {}; sel.forEach(ch => { const d = document.createElement('div'); d.className = 'flex items-center gap-2.5 bg-nv-800/40 border border-nv-700/20 rounded-xl p-3 fu'; d.innerHTML = `<div class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style="background:${cM2[ch]}15"><i class="${iM[ch]} text-xs" style="color:${cM2[ch]}"></i></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between mb-1.5"><span class="text-[11px] font-bold text-white uppercase tracking-wider">${nM[ch]}</span><span class="cs text-[10px] font-bold text-nv-500 uppercase">Awaiting...</span></div><div class="w-full h-1 bg-nv-700/50 rounded-full overflow-hidden"><div class="pb h-full rounded-full transition-all duration-500" style="width:0%;background:${cM2[ch]}"></div></div></div>`; list.appendChild(d); items[ch] = { st: d.querySelector('.cs'), br: d.querySelector('.pb') } });
             for (let i = 0; i < sel.length; i++) {
