@@ -20,12 +20,6 @@
          SPLASH / LANDING PAGE
     ════════════════════════════════════════════════ -->
     <div id="splash" class="splash-screen">
-        <!-- Full-page hero image as background -->
-        <img src="Assets/kua-logo.png" alt="KUA Social Marketing Platform" class="splash-bg-img" aria-hidden="true" />
-
-        <!-- Dark gradient overlay so button/text are readable -->
-        <div class="splash-overlay" aria-hidden="true"></div>
-
         <!-- Animated background particles -->
         <div class="splash-particles" aria-hidden="true">
             <span></span><span></span><span></span><span></span>
@@ -36,8 +30,13 @@
         <div class="splash-orb splash-orb-1" aria-hidden="true"></div>
         <div class="splash-orb splash-orb-2" aria-hidden="true"></div>
 
-        <!-- Content anchored to the bottom third -->
+        <!-- Content - Centered Logo and Button -->
         <div class="splash-content">
+            <!-- Hero image -->
+            <div class="splash-logo-wrap">
+                <img src="Assets/kua-logo.png" alt="KUA Social Marketing Platform Logo" class="splash-hero-img" />
+            </div>
+
             <!-- WELCOME button -->
             <button id="splash-btn" onclick="enterApp()" class="splash-btn" aria-label="Enter KUA Platform">
                 <span class="splash-btn-glow" aria-hidden="true"></span>
@@ -46,7 +45,7 @@
                 <i class="fa-solid fa-arrow-right splash-btn-arrow" aria-hidden="true"></i>
             </button>
 
-            <!-- Powered by hint -->
+            <!-- Powered by branding -->
             <p class="splash-hint">
                 <i class="fa-solid fa-shield-halved mr-1 opacity-60"></i>
                 Powered by <strong>UNITED</strong>
